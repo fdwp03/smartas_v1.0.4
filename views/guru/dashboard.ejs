@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Guru</title>
+</head>
+<body>
+    <h1>Selamat datang, Guru <%= user.nama %></h1>
+    <h3>Jadwal Mengajar:</h3>
+    <% if (jadwal.length) { %>
+        <table border="1" cellpadding="8">
+            <tr><th>Hari</th><th>Jam</th><th>Kelas</th><th>Mata Pelajaran</th></tr>
+            <% jadwal.forEach(j => { %>
+                <tr>
+                    <td><%= j.hari %></td>
+                    <td><%= j.jam %></td>
+                    <td><%= j.kelas.nama %></td>
+                    <td><%= j.mata_pelajaran.nama %></td>
+                </tr>
+            <% }) %>
+        </table>
+    <% } else { %>
+        <p>Belum ada jadwal.</p>
+    <% } %>
+    <a href="/logout">Logout</a>
+</body>
+</html>

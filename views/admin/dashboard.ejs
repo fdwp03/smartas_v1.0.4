@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Admin</title>
+</head>
+<body>
+    <h1>Selamat datang, Admin <%= user.nama %></h1>
+    <p>Statistik:</p>
+    <ul>
+        <li>Total Guru: <%= stats.guru %></li>
+        <li>Total Siswa: <%= stats.siswa %></li>
+        <li>Total Kelas: <%= stats.kelas %></li>
+    </ul>
+    <a href="/logout">Logout</a>
+</body>
+</html>
