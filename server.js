@@ -23,6 +23,11 @@ app.use(session({
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+// Root route - redirect ke login
+app.get('/', (req, res) => {
+    res.redirect('/login');
+});
+
 // Routing
 const authRoutes = require('./routes/auth')(supabase);
 const adminRoutes = require('./routes/admin')(supabase);
